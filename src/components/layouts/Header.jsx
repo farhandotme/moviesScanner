@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useTheme } from "../../context/ThemeContext";
+import { CiLight } from "react-icons/ci";
+import { CiDark } from "react-icons/ci";
 
 const Header = () => {
   const theme = useTheme()
@@ -20,7 +22,7 @@ const Header = () => {
           <NavLink to="/" className={navLinkStyle}>Home</NavLink>
           <NavLink to="/movie" className={navLinkStyle}>Movies</NavLink>
           <NavLink to="/contact" className={navLinkStyle}>Contact</NavLink>
-          <button onClick={handleSwitch}>switch</button>
+          <button className="text-2xl" onClick={handleSwitch}>{theme.theme === 'dark' ? <CiLight /> : <CiDark />}</button>
         </nav>
       </div>
     </header>
